@@ -1,0 +1,27 @@
+<button class="w-full shadow-md flex flex-col rounded-md h-max active:shadow-none hover:shadow-lg"
+>
+  <div
+    class="
+      shadow-md
+      rounded-md rounded-b-none
+       border border-primary border-2
+       w-full p-1
+       flex flex-col items-center
+       transition ease-in-out
+       hover:bg-primary
+       duration-300
+">
+    <img class="h-20 w-20" [src]="decoration.decorations?.image_url">
+    <p class="font-semibold">{{decoration.decoration_name}}</p>
+  </div>
+  <div
+    class="p-1 border-b-2 border-r-2 border-l-2  border-accent bg-accent"
+    *ngIf="decoration.hobby_experience_years">
+    Hobby: {{decoration.hobby_experience_years}} years
+  </div>
+  <div
+    class="shadow-md bg-secondary p-1 border-b-2 border-r-2 border-l-2  border-secondary rounded-b-md"
+    *ngIf="decoration.professional_experience_years">
+    Pro: {{decoration.professional_experience_years}} years
+  </div>
+</button>

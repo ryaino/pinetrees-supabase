@@ -1,0 +1,30 @@
+<div *ngIf="profileInfo" class="flex flex-col gap-10">
+  <div
+    class="flex max-w-full items-center gap-10">
+    <pinetrees-profile-avatar-card
+      [contactEmail]="profileInfo.contact_email"
+      [location]="profileInfo.location"
+      [name]="profileInfo.given_name + ' ' + profileInfo.family_name"
+      [contactPhone]="profileInfo.contact_phone"
+      [pictureUrl]="profileInfo.profile_picture_url"
+    >
+    </pinetrees-profile-avatar-card>
+    <pinetrees-card>
+      <p class="max-w p-3 text-center">
+        {{profileInfo.introduction}}
+      </p>
+    </pinetrees-card>
+  </div>
+  <div class="w-max">
+    <pinetrees-card>
+      <div class="p-5 flex flex-col gap-5">
+        <div *ngFor="let category of profileDecorations.keys()" class="flex justify-evenly">
+          <pinetrees-profile-decoration-category
+            [categoryName]="category"
+            [decorations]="profileDecorations.get(category)"
+          ></pinetrees-profile-decoration-category>
+        </div>
+      </div>
+    </pinetrees-card>
+  </div>
+</div>

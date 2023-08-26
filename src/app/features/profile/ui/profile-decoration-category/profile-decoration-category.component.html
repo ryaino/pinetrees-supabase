@@ -1,0 +1,11 @@
+<div>
+  <h2 class="font-semibold text-xl">{{categoryName}}s</h2>
+  <div class="grid grid-flow-col auto-cols-fr gap-3">
+    <pinetrees-profile-decoration-card
+      *ngFor="let decoration of decorations"
+      [decoration]="decoration"
+    >
+    </pinetrees-profile-decoration-card>
+
+  </div>
+</div>
